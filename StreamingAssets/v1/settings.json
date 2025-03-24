@@ -1,0 +1,15 @@
+{
+    "themes" : [
+        {
+            "key": "default",
+            "title": "Standart",
+            "mazeSprite": "maze_sprite_demo.png",
+            "fullSize": 4096,
+            "spriteSize": 256,
+            "paths": [{"x": 0, "y": 0}],
+            "walls": [{"x": 0, "y": 256}],
+            "rubbles": [{"x": 0, "y": 0}],
+            "exits": [{"x": 0, "y": 512}]
+        }
+    ]
+}
