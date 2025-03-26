@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Pepper</title>
+    <title>Unity WebGL Player | Pepper</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -51,17 +51,24 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Pepper.loader.js";
+      var loaderUrl = buildUrl + "/PeppersTest.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Pepper.data",
-        frameworkUrl: buildUrl + "/Pepper.framework.js",
-        codeUrl: buildUrl + "/Pepper.wasm",
+        dataUrl: buildUrl + "/PeppersTest.data",
+        frameworkUrl: buildUrl + "/PeppersTest.framework.js",
+        codeUrl: buildUrl + "/PeppersTest.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Pepper",
         productName: "Pepper",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -75,7 +82,7 @@
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
-        config.devicePixelRatio = 2;
+        // config.devicePixelRatio = 1;
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
