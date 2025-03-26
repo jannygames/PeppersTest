@@ -51,19 +51,17 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/PepperGame.loader.js";
+      var loaderUrl = buildUrl + "/Pepper.loader.js";
       var config = {
-        dataUrl: buildUrl + "/PepperGame.data",
-        frameworkUrl: buildUrl + "/PepperGame.framework.js",
-        codeUrl: buildUrl + "/PepperGame.wasm",
+        dataUrl: buildUrl + "/Pepper.data",
+        frameworkUrl: buildUrl + "/Pepper.framework.js",
+        codeUrl: buildUrl + "/Pepper.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Pepper",
         productName: "Pepper",
         productVersion: "1.0",
         showBanner: unityShowBanner,
-        decompressFallback: true,
       };
-
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
