@@ -1653,7 +1653,9 @@ var ASM_CONSTS = {
       var value = localStorage.getItem(key);
       if (value === null) value = "";
   
-      var buffer = allocate(intArrayFromString(value), 'i8', ALLOC_NORMAL);
+      var length = lengthBytesUTF8(value) + 1;
+      var buffer = _malloc(length);
+      stringToUTF8(value, buffer, length);
       return buffer;
     }
 
