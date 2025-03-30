@@ -1652,7 +1652,8 @@ var ASM_CONSTS = {
       var key = UTF8ToString(keyPtr);
       var value = localStorage.getItem(key);
       if (value === null) value = "";
-      var buffer = Module._malloc(lengthBytesUTF8(value) + 1);
+      
+      var buffer = Module['_malloc'](lengthBytesUTF8(value) + 1);
       stringToUTF8(value, buffer, lengthBytesUTF8(value) + 1);
       return buffer;
     }
